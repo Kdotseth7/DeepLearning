@@ -13,6 +13,7 @@ Created on Fri Mar  8 23:02:22 2019
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import pickle
 
 # Importing the dataset
 dataset = pd.read_csv('Churn_Modelling.csv')
@@ -73,6 +74,17 @@ y_pred = (y_pred > 0.5) # To convert percentage into True or False for cm, equiv
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 print("Confusion Matrix : %s " % (cm))
+
+# =============================================================================
+# # Pickling the Feature Scaler
+# with open("sc.pickle", "wb") as s:
+#     pickle.dump(sc, s)
+#     
+# # Pickling the classifier
+# with open("classifier.pickle", "wb") as f:
+#     pickle.dump(classifier, f)
+# =============================================================================
+
 
 
 
